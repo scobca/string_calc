@@ -22,7 +22,7 @@ export default {
     --bg-dark: hsl(0, 0%, 29%);
 
     --header-light: hsl(0, 0%, 90%);
-    --header-dark: ;
+    --header-dark: hsl(60, 1%, 27%);
 }
 
 
