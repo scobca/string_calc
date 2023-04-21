@@ -1,24 +1,40 @@
 <template>
-
+    <v-header/>
 </template>
 
 <script>
 
+import VHeader from "@/components/UI/vHeader.vue";
+
 export default {
   name: 'App',
   components: {
+      VHeader
 
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+:root {
+    --bg-light: hsl(0, 0%, 100%);
+    --bg-dark: hsl(0, 0%, 29%);
+
+    --header-light: hsl(0, 0%, 90%);
+    --header-dark: ;
+}
+
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--bg-light);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bg-light);
+    }
 }
 </style>
