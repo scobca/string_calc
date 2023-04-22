@@ -10,7 +10,6 @@ export default {
   name: 'App',
   components: {
       VHeader
-
   }
 }
 </script>
@@ -19,22 +18,13 @@ export default {
 
 :root {
     --bg-light: hsl(0, 0%, 100%);
-    --bg-dark: hsl(0, 0%, 29%);
+    --bg-dark: hsl(0, 0%, 35%);
 
     --header-light: hsl(0, 0%, 90%);
-    --header-dark: hsl(60, 1%, 27%);
-}
+    --header-dark: hsl(60, 1%, 12%);
 
+    --header-logo: hsl(169, 57%, 73%);
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--bg-light);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--bg-light);
-    }
+    --light: hsl(0, 0%, 100%);
 }
 </style>
