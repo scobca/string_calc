@@ -1,5 +1,6 @@
 <template>
     <v-header/>
+    <router-view/>
 </template>
 
 <script>

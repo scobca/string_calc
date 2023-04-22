@@ -2,9 +2,16 @@
     <header class="header_container container">
             <div class="header_logo"> Рассчитай сам! </div>
             <div class="header_btt">
-                <ul class="header_btt_container">
-                    <li class="hBtt">
+                <ul class="buttons">
+                    <li class="header-button">
                         <router-link to="/"> Главная </router-link>
+                    </li>
+                    <li class="header-button">
+                        <v-select
+                            :selects="categories"
+                            class="header_button"
+                            @select="updateTestsList"
+                        />
                     </li>
                 </ul>
             </div>
@@ -13,16 +20,45 @@
 
 <script>
 
+import VSelect from "@/components/UI/vSelect.vue";
+
 export default {
     name: "vHeader",
-    components: {},
+    components: {VSelect},
     data() {
-
+        return {
+            categories: [
+                {
+                    type: 0,
+                    name: 'Выбрать',
+                    active: true
+                },
+                {
+                    type: 1,
+                    name: 'Крючок',
+                    active: false
+                },
+                {
+                    type: 2,
+                    name: 'Спицы',
+                    active: false
+                }
+            ],
+            vRoute: ''
+        }
     },
     methods: {
-        checkThemeAndChange() {
-            console.log('123');
-        }
+        updateTestsList(n) {
+            this.categories = this.categories.map(el => {
+                let active = false;
+                if (el.type === n.type)
+                    active = true;
+                return {
+                    ...el,
+                    active
+                }
+            })
+        },
     }
 }
 
@@ -46,23 +82,31 @@ export default {
     font-size: 1.5rem;
 }
 
-.header_btt_container {
+.buttons {
     display: flex;
     flex-direction: row-reverse;
-    gap: 1rem;
+    gap: 2rem;
     list-style: none;
-
+    cursor: pointer;
     font-size: 1.1rem;
 }
 
-/*y-select {*/
-/*    background: linear-gradient(200.42deg, #B275FF 13.57%, #DD7EFF 98.35%);*/
-/*}*/
+.header_btt {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    max-width: 15rem;
+}
+
+.header_button {
+    height: 2rem;
+}
 
 
 @media (prefers-color-scheme: dark) {
     .container {
         background-color: var(--header-dark);
+        color: var(--light);
     }
 }
 
