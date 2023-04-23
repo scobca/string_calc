@@ -73,9 +73,8 @@ export default {
 .select{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: -.1rem;
 }
 
 .button {
@@ -114,7 +113,7 @@ export default {
     list-style: none;
     overflow: hidden;
     min-width: 10rem;
-    margin-top: 10rem;
+    margin-top: 2.5rem;
     z-index: 101;
 }
 
