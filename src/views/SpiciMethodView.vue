@@ -1,10 +1,10 @@
 <template>
-    <p>hook method</p>
+    <p>spici method</p>
 </template>
 
 <script>
 export default {
-    name: "HookMethodView"
+    name: "SpiciMethod"
 }
 </script>
 

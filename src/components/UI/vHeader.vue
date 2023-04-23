@@ -7,10 +7,16 @@
                         <router-link to="/"> Главная </router-link>
                     </li>
                     <li class="header_button">
+                        <router-link to="/about"> О проекте </router-link>
+                    </li><li class="header_button">
+                        <router-link to='/'> Назад </router-link>
+                    </li>
+                    <li class="header_button">
                         <v-select
+                            class="header_button"
+                            v-if="$route.name === 'home'"
                             :selects="categories"
                             @select="updateTestsList"
-                            class="header_button"
                         />
                     </li>
                 </ul>
@@ -88,13 +94,13 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    max-width: 15rem;
+    max-width: 30rem;
 }
 
 .buttons {
     display: flex;
     flex-direction: row-reverse;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
     cursor: pointer;
     font-size: 1.1rem;

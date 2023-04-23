@@ -1,10 +1,10 @@
 <template>
-    <p>hook method</p>
+    <p>about project</p>
 </template>
 
 <script>
 export default {
-    name: "HookMethodView"
+    name: "AboutProjectView"
 }
 </script>
 

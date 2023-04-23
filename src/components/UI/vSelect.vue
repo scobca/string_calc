@@ -5,7 +5,7 @@
             <img class="button__icon" src="@/assets/img/select_arrow.svg" alt="">
         </p>
         <ul v-if="list.show" class="select__list">
-            <li v-for="el in notActiveSelects" :key="`${el}`" @click="select(el)">
+            <li v-for="el in notActiveSelects" :key="`${el}`" @click="select(el)" >
                 <p class="list__item button_active">{{ el.name }}</p>
             </li>
         </ul>
@@ -89,7 +89,7 @@ export default {
 .button__icon {
     width: 1rem;
     padding-top: .2rem;
-    margin-left: .35rem;
+    margin-left: .4rem;
     height: .7rem;
 }
 
@@ -102,6 +102,7 @@ export default {
     white-space: nowrap;
     text-overflow: ellipsis;
     color: var(--text-color);
+    font-size: 1.1rem;
 }
 
 .select__list {
@@ -114,6 +115,7 @@ export default {
     overflow: hidden;
     min-width: 10rem;
     margin-top: 10rem;
+    z-index: 101;
 }
 
 .list__item {
