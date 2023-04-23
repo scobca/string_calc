@@ -75,6 +75,8 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    background-color: var(--header-bg-color);
 }
 
 .header_logo {
@@ -100,14 +102,11 @@ export default {
 
 .header_button {
     height: 2rem;
+    color: var(--header-logo);
 }
 
-
-@media (prefers-color-scheme: dark) {
-    .container {
-        background-color: var(--header-dark);
-        color: var(--light);
-    }
+.header_button > router-link:after {
+    color: white !important;
 }
 
 </style>
