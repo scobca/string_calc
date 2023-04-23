@@ -101,6 +101,7 @@ export default {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: var(--text-color);
 }
 
 .select__list {
@@ -118,13 +119,17 @@ export default {
 .list__item {
     width: 100%;
     padding: 1rem;
-    color: var(--vt-c-text-dark-2);
+    color: var(--text-color);
     font-size: 1rem;
     text-align: left;
 }
 
 .list__item:hover {
     background: linear-gradient(130.42deg, #B27511 13.57%, #DD7E11 98.35%);
+}
+
+select {
+    color: var(--text-color);
 }
 
 </style>

@@ -1,16 +1,16 @@
 <template>
     <header class="header_container container">
-            <div class="header_logo"> Рассчитай сам! </div>
-            <div class="header_btt">
+            <div class="logo"> Рассчитай сам! </div>
+            <div class="list">
                 <ul class="buttons">
-                    <li class="header-button">
+                    <li class="header_button">
                         <router-link to="/"> Главная </router-link>
                     </li>
-                    <li class="header-button">
+                    <li class="header_button">
                         <v-select
                             :selects="categories"
-                            class="header_button"
                             @select="updateTestsList"
+                            class="header_button"
                         />
                     </li>
                 </ul>
@@ -79,9 +79,16 @@ export default {
     background-color: var(--header-bg-color);
 }
 
-.header_logo {
+.logo {
     color: var(--header-logo);
     font-size: 1.5rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    max-width: 15rem;
 }
 
 .buttons {
@@ -93,20 +100,7 @@ export default {
     font-size: 1.1rem;
 }
 
-.header_btt {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    max-width: 15rem;
-}
-
 .header_button {
     height: 2rem;
-    color: var(--header-logo);
 }
-
-.header_button > router-link:after {
-    color: white !important;
-}
-
 </style>

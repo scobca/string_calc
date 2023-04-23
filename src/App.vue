@@ -6,12 +6,10 @@
 <script>
 
 import VHeader from "@/components/UI/vHeader.vue";
-import HomeView from "@/views/HomeView.vue";
 
 export default {
   name: 'App',
   components: {
-      HomeView,
       VHeader
   }
 }
@@ -39,7 +37,6 @@ export default {
         --bg-color: var(--bg-dark);
         --text-color: var(--light);
 
-        --header-text: var(--header-dark);
         --header-logo: var(--header-logo-dark);
         --header-bg-color: var(--header-bg-dark);
     }
@@ -47,7 +44,7 @@ export default {
     *,
     *::before,
     *::after {
-        color: var(--light);
+        color: var(--text-color);
     }
 }
 
@@ -56,7 +53,6 @@ export default {
         --bg-color: var(--bg-light);
         --text-color: var(--dark);
 
-        --header-text: var(--header-light);
         --header-logo: var(--header-logo-light);
         --header-bg-color: var(--header-bg-light);
     }
@@ -64,7 +60,7 @@ export default {
     *,
     *::before,
     *::after {
-        color: var(--dark);
+        color: var(--text-color);
     }
 }
 </style>
