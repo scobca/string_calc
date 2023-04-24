@@ -1,20 +1,78 @@
 <template>
     <v-header/>
 <!--    <router-view/>-->
-    <v-model/>
+    <v-model :selects="product" v-if="this"/>
 </template>
 
 <script>
 
 import VHeader from "@/components/UI/vHeader.vue";
-import VModel from "@/views/VModel.vue";
+import VModel from "@/components/UI/VModel.vue";
+// import VModelList from "@/components/UI/VModelList.vue";
 
 export default {
   name: 'App',
   components: {
       VModel,
       VHeader
-  }
+  },
+    data () {
+        return {
+            selectedProduct: 0,
+            product: [
+                {
+                    type: 0,
+                    name: 'Выбрать изделие',
+                    active: true
+                },
+                {
+                    type: 1,
+                    name: 'Свитер',
+                    active: false
+                },
+                {
+                    type: 2,
+                    name: 'Жакет',
+                    active: false
+                },
+                {
+                    type: 3,
+                    name: 'Пуловер',
+                    active: false
+                },
+                {
+                    type: 4,
+                    name: 'Жилет',
+                    active: false
+                },
+                {
+                    type: 5,
+                    name: 'Кардиган',
+                    active: false
+                },
+                {
+                    type: 6,
+                    name: 'Шапка',
+                    active: false
+                },
+                {
+                    type: 7,
+                    name: 'Шарф',
+                    active: false
+                },
+                {
+                    type: 8,
+                    name: 'Топ',
+                    active: false
+                },
+                {
+                    type: 9,
+                    name: 'Плед',
+                    active: false
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -33,6 +91,8 @@ export default {
 
     --light: hsl(0, 0%, 100%);
     --dark: hsla(0, 0%, 24%, 0.66);
+
+    --border-color: hsl(37, 83%, 38%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +102,8 @@ export default {
 
         --header-logo: var(--header-logo-dark);
         --header-bg-color: var(--header-bg-dark);
+
+        --border-color: hsl(37, 83%, 38%);
     }
 
     *,
@@ -58,6 +120,8 @@ export default {
 
         --header-logo: var(--header-logo-light);
         --header-bg-color: var(--header-bg-light);
+
+        --border-color: hsl(37, 83%, 38%);
     }
 
     *,
