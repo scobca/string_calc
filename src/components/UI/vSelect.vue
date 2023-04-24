@@ -113,8 +113,9 @@ export default {
     list-style: none;
     overflow: hidden;
     min-width: 10rem;
-    margin-top: 2.5rem;
+    margin-top: -1rem;
     z-index: 101;
+    scale: 80%;
 }
 
 .list__item {

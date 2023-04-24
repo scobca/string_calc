@@ -1,18 +1,18 @@
 <template>
     <v-header/>
 <!--    <router-view/>-->
-    <hook-method-view/>
+    <v-model/>
 </template>
 
 <script>
 
 import VHeader from "@/components/UI/vHeader.vue";
-import HookMethodView from "@/views/HookMethodView.vue";
+import VModel from "@/views/VModel.vue";
 
 export default {
   name: 'App',
   components: {
-      HookMethodView,
+      VModel,
       VHeader
   }
 }

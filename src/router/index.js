@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from "@/views/HomeView.vue";
-import HookMethodView from "@/views/HookMethodView.vue";
-import SpiciMethodView from "@/views/SpiciMethodView.vue";
+import VModel from "@/views/VModel.vue";
 import AboutProjectView from "@/views/AboutProjectView.vue";
 
 const routes = [
@@ -12,16 +11,10 @@ const routes = [
         component: HomeView
     },
     {
-        path: '/hook',
+        path: '/method',
         alias: '/hook',
         name: 'hook',
-        component: HookMethodView
-    },
-    {
-        path: '/spici',
-        alias: '/spici',
-        name: 'spici',
-        component: SpiciMethodView
+        component: VModel
     },
     {
         path: '/about',
