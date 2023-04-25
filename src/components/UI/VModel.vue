@@ -6,6 +6,7 @@
            </h2>
 
            <div class="common_model">
+
               <div class="settings">
                   <div class="type">
                       <v-select class="selector"
@@ -14,14 +15,16 @@
                       />
                   </div>
 
-                  <div class="type" v-if="this.selectedProductName === 'Свитер'">
-                      <v-data-settings v-model="length"
+                  <div class="type" v-if="this.selectedProductName !== 'Выбрать изделие'">
+                      <v-data-settings v-if="lengthOff !== 1"
+                                       v-model="length"
                                        :placeholder="'Введите длину рукава'"
                                        v-model.trim="length"
                                        id="input"
                       />
                   </div>
               </div>
+
 
                <div class="result">
                    <v-model-list class="settings_model"
@@ -53,7 +56,8 @@ export default {
     data () {
         return {
             selectedProductIndex: 0,
-            selectedProductName: '',
+            selectedProductName: 'NaN',
+            lengthOff: 0,
             length: '',
             product: [
                 {
@@ -118,6 +122,17 @@ export default {
                     this.selectedProductIndex = n.type
                     this.selectedProductName = n.name
 
+                if (n.name === 'Свитер')
+                    this.lengthOff = 0;
+                else if (n.name === 'Жакет')
+                    this.lengthOff = 0;
+                else if (n.name === 'Кардиган')
+                    this.lengthOff = 0;
+                else if (n.name === 'Выбрать изделие')
+                    this.lengthOff = 1;
+                else
+                    this.lengthOff = 1;
+
                 return {
                     ...el,
                     active
@@ -126,6 +141,9 @@ export default {
             console.log(this.selectedProductIndex);
             console.log(this.selectedProductName);
         }
+    },
+    created() {
+        this.selectedProductName = 'Выбрать изделие'
     }
 }
 </script>
