@@ -7,15 +7,18 @@
 
            <div class="common_model">
               <div class="settings">
-                  <v-select class="selector"
-                            :selects="product"
-                            @select="update"
-                  />
+                  <div class="type">
+                      <v-select class="selector"
+                                :selects="product"
+                                @select="update"
+                      />
+                  </div>
               </div>
 
                <div class="result">
                    <v-model-list class="settings_model"
-                                 :type-index="selectedProduct"
+                                 :type-index="selectedProductIndex"
+                                 :name-type="selectedProductName"
                    />
                </div>
            </div>
@@ -39,7 +42,8 @@ export default {
     },
     data () {
         return {
-            selectedProduct: 0,
+            selectedProductIndex: 0,
+            selectedProductName: '',
             product: [
                 {
                     type: 0,
@@ -100,14 +104,16 @@ export default {
                 let active = false;
                 if (el.type === n.type)
                     active = true;
-                    this.selectedProduct = n.type
+                    this.selectedProductIndex = n.type
+                    this.selectedProductName = n.name
 
                 return {
                     ...el,
                     active
                 }
             })
-            console.log(this.selectedProduct);
+            console.log(this.selectedProductIndex);
+            console.log(this.selectedProductName);
         }
     }
 }
@@ -142,13 +148,30 @@ export default {
 
 .header {
     font-size: 2rem;
-    color: var(--header-logo);
+    color: var(--headers-color);
 }
 
 .selector {
+    padding: .3rem;
+}
+
+.type {
     border: .15rem solid var(--border-color);
     border-radius: .5rem;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings {
     padding: .3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 20rem;
 }
 
 .result {
@@ -157,6 +180,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 30rem;
+
+    border: 3px solid var(--results-border-color);
+    border-radius: .5rem;
 
 }
 

@@ -88,11 +88,13 @@ export default {
     --header-logo-dark: hsl(177, 59%, 42%);
     --header-bg-light: var(--vt-c-white-mute);
     --header-bg-dark: var(--vt-c-black-mute);
+    --headers-color: hsl(169, 71%, 45%);
 
     --light: hsl(0, 0%, 100%);
     --dark: hsla(0, 0%, 24%, 0.66);
 
     --border-color: hsl(37, 83%, 38%);
+    --results-border-color: hsl(169, 71%, 45%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,9 +103,11 @@ export default {
         --text-color: var(--light);
 
         --header-logo: var(--header-logo-dark);
+        --headers-color: hsl(169, 71%, 45%);
         --header-bg-color: var(--header-bg-dark);
 
         --border-color: hsl(37, 83%, 38%);
+        --results-border-color: hsl(169, 71%, 45%);
     }
 
     *,
@@ -119,9 +123,11 @@ export default {
         --text-color: var(--dark);
 
         --header-logo: var(--header-logo-light);
+        --headers-color: hsl(169, 71%, 45%);
         --header-bg-color: var(--header-bg-light);
 
         --border-color: hsl(37, 83%, 38%);
+        --results-border-color: hsl(169, 71%, 45%)
     }
 
     *,
