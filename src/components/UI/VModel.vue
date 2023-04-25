@@ -14,10 +14,11 @@
                       />
                   </div>
 
-                  <div class="type">
-                      <v-select class="selector"
-                                :selects="product"
-                                @select="update"
+                  <div class="type" v-if="this.selectedProductName === 'Свитер'">
+                      <v-data-settings v-model="length"
+                                       :placeholder="'Введите длину рукава'"
+                                       v-model.trim="length"
+                                       id="input"
                       />
                   </div>
               </div>
@@ -26,6 +27,7 @@
                    <v-model-list class="settings_model"
                                  :type-index="selectedProductIndex"
                                  :name-type="selectedProductName"
+                                 :length="length"
                    />
                </div>
            </div>
@@ -37,20 +39,22 @@
 
 import VModelList from "@/components/UI/VModelList.vue";
 import VSelect from "@/components/UI/vSelect.vue";
+import VDataSettings from "@/components/UI/vDataSettings.vue";
 
 export default {
     name: "HookMethodView",
-    components: {VSelect, VModelList},
+    components: {VDataSettings, VSelect, VModelList},
     props: {
         selects: {
             type: Array,
             default: () => []
-        }
+        },
     },
     data () {
         return {
             selectedProductIndex: 0,
             selectedProductName: '',
+            length: '',
             product: [
                 {
                     type: 0,
@@ -192,7 +196,19 @@ export default {
 
     border: 3px solid var(--results-border-color);
     border-radius: .5rem;
+}
 
+#input {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    height: 2.3rem;
+    font-size: 1rem;
+    min-width: 19rem;
+}
+
+#input:focus {
+    outline: none;
 }
 
 </style>
