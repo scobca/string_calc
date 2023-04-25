@@ -13,6 +13,13 @@
                                 @select="update"
                       />
                   </div>
+
+                  <div class="type">
+                      <v-select class="selector"
+                                :selects="product"
+                                @select="update"
+                      />
+                  </div>
               </div>
 
                <div class="result">
@@ -172,6 +179,7 @@ export default {
     justify-content: center;
     align-items: center;
     min-width: 20rem;
+    gap: 2rem;
 }
 
 .result {
