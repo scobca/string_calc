@@ -16,7 +16,7 @@
                   </div>
 
                   <div class="type" v-if="this.selectedProductName !== 'Выбрать изделие'">
-                      <v-data-settings v-if="lengthOff !== 1"
+                      <v-data-settings v-if="!lengthOff"
                                        v-model="length"
                                        :placeholder="'Введите длину рукава'"
                                        v-model.trim="length"
@@ -57,7 +57,10 @@ export default {
         return {
             selectedProductIndex: 0,
             selectedProductName: 'NaN',
-            lengthOff: 0,
+            lengthOff: {
+                type: Boolean,
+                default: false
+            },
             length: '',
             product: [
                 {
@@ -110,7 +113,10 @@ export default {
                     name: 'Плед',
                     active: false
                 }
-            ]
+            ],
+            length_off: {
+                name: ['Свитер', 'Жакет', 'Кардиган']
+            }
         }
     },
     methods: {
@@ -122,16 +128,7 @@ export default {
                     this.selectedProductIndex = n.type
                     this.selectedProductName = n.name
 
-                if (n.name === 'Свитер')
-                    this.lengthOff = 0;
-                else if (n.name === 'Жакет')
-                    this.lengthOff = 0;
-                else if (n.name === 'Кардиган')
-                    this.lengthOff = 0;
-                else if (n.name === 'Выбрать изделие')
-                    this.lengthOff = 1;
-                else
-                    this.lengthOff = 1;
+                this.lengthOff = !this.length_off.name.includes(this.selectedProductName);
 
                 return {
                     ...el,
