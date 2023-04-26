@@ -9,18 +9,19 @@
 
               <div class="settings">
                   <div class="type">
-                      <v-select class="selector"
+                      <v-select class="selector length"
                                 :selects="product"
                                 @select="update"
                       />
                   </div>
 
                   <div class="type" v-if="this.selectedProductName !== 'Выбрать изделие'">
-                      <v-data-settings v-if="!lengthOff"
+                      <v-data-settings v-if="this.params_off.length.includes(this.selectedProductName)"
                                        v-model="length"
-                                       :placeholder="'Введите длину рукава'"
+                                       :placeholder="'Введите длину рукава (см)'"
                                        v-model.trim="length"
                                        id="input"
+                                       type="number"
                       />
                   </div>
               </div>
@@ -31,6 +32,11 @@
                                  :type-index="selectedProductIndex"
                                  :name-type="selectedProductName"
                                  :length="length"
+                                 :l-means="lMeans"
+                                 :cl-means="clMeans"
+                                 :cw-means="cwMeans"
+                                 :collar-means="collarMeans"
+                                 :v-head-means="vHeadMeans"
                    />
                </div>
            </div>
@@ -57,10 +63,6 @@ export default {
         return {
             selectedProductIndex: 0,
             selectedProductName: 'NaN',
-            lengthOff: {
-                type: Boolean,
-                default: false
-            },
             length: '',
             product: [
                 {
@@ -114,9 +116,18 @@ export default {
                     active: false
                 }
             ],
-            length_off: {
-                name: ['Свитер', 'Жакет', 'Кардиган']
-            }
+            params_off: {
+                length: ['Свитер', 'Жакет', 'Кардиган'],
+                cLength: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Шарф', 'Топ', 'Плед', 'Пуловер', 'Шапка'],
+                cWidth: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Шарф', 'Топ', 'Плед', 'Пуловер'],
+                collarWidth: ['Пуловер'],
+                vHead: ['Шапка']
+            },
+            lMeans: false,
+            clMeans: false,
+            cwMeans: false,
+            collarMeans: false,
+            vHeadMeans: false
         }
     },
     methods: {
@@ -128,7 +139,11 @@ export default {
                     this.selectedProductIndex = n.type
                     this.selectedProductName = n.name
 
-                this.lengthOff = !this.length_off.name.includes(this.selectedProductName);
+                this.lMeans = this.params_off.length.includes(this.selectedProductName);
+                this.clMeans = this.params_off.cLength.includes(this.selectedProductName);
+                this.cwMeans = this.params_off.cWidth.includes(this.selectedProductName);
+                this.collarMeans = this.params_off.collarWidth.includes(this.selectedProductName);
+                this.vHeadMeans = this.params_off.vHead.includes(this.selectedProductName);
 
                 return {
                     ...el,

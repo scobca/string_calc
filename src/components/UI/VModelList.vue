@@ -13,7 +13,7 @@
                     Тип изделия: {{nameType}}
                 </div>
 
-                <div class="product" v-if="length > 0">
+                <div class="product" v-if="lMeans">
                     Длина рукава: {{length}}
                 </div>
 
@@ -40,6 +40,26 @@ export default {
         selects: {
             type: Array,
             default: () => []
+        },
+        lMeans: {
+            type: Boolean,
+            default: false
+        },
+        clMeans: {
+            type: Boolean,
+            default: false
+        },
+        cwMeans: {
+            type: Boolean,
+            default: false
+        },
+        collarMeans: {
+            type: Boolean,
+            default: false
+        },
+        vHeadMeans: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {}
