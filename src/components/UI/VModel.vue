@@ -16,13 +16,6 @@
                   </div>
 
                   <div class="type" v-if="this.selectedProductName !== 'Выбрать изделие'">
-                      <v-data-settings v-if="this.params_off.length.includes(this.selectedProductName)"
-                                       v-model="length"
-                                       :placeholder="'Введите длину рукава (см)'"
-                                       v-model.trim="length"
-                                       id="input"
-                                       type="number"
-                      />
                       <v-data-settings v-if="this.params_off.cLength.includes(this.selectedProductName)"
                                        v-model="cLength"
                                        :placeholder="'Введите длину (см)'"
@@ -34,6 +27,13 @@
                                        v-model="cWidth"
                                        :placeholder="'Введите ширину (см)'"
                                        v-model.trim="cWidth"
+                                       id="input"
+                                       type="number"
+                      />
+                      <v-data-settings v-if="this.params_off.length.includes(this.selectedProductName)"
+                                       v-model="length"
+                                       :placeholder="'Введите длину рукава (см)'"
+                                       v-model.trim="length"
                                        id="input"
                                        type="number"
                       />
@@ -60,12 +60,16 @@
                    <v-model-list class="settings_model"
                                  :type-index="selectedProductIndex"
                                  :name-type="selectedProductName"
-                                 :length="length"
                                  :l-means="lMeans"
                                  :cl-means="clMeans"
                                  :cw-means="cwMeans"
                                  :collar-means="collarMeans"
                                  :v-head-means="vHeadMeans"
+                                 :length="length"
+                                 :cLength="cLength"
+                                 :c-width="cWidth"
+                                 :collar-width="collarWidth"
+                                 :v-head="vHead"
                    />
                </div>
            </div>
@@ -258,7 +262,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 30rem;
+    min-width: 20rem;
 
     border: 3px solid var(--results-border-color);
     border-radius: .5rem;

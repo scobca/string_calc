@@ -1,20 +1,32 @@
 <template>
     <section class="container">
         <div class="container">
-            <p class="result">
-                Результат
-            </p>
-
             <div class="settings_container">
-                <div class="switer" v-if="this.typeIndex === 0">
+                <div class="product" v-if="this.typeIndex === 0">
                     Не выбран тип изделия
                 </div>
                 <div class="product" v-else>
                     Тип изделия: {{nameType}}
                 </div>
 
+                <div class="product" v-if="clMeans">
+                    Длина: {{cLength}}
+                </div>
+
+                <div class="product" v-if="cwMeans">
+                    Ширина: {{cWidth}}
+                </div>
+
                 <div class="product" v-if="lMeans">
                     Длина рукава: {{length}}
+                </div>
+
+                <div class="product" v-if="collarMeans">
+                    Высота воротника: {{collarWidth}}
+                </div>
+
+                <div class="product" v-if="vHeadMeans">
+                    Объем головы: {{vHead}}
                 </div>
 
             </div>
@@ -35,6 +47,18 @@ export default {
             default: ''
         },
         length: {
+            default: 0
+        },
+        cLength: {
+            default: 0
+        },
+        cWidth: {
+            default: 0
+        },
+        collarWidth: {
+            default: 0
+        },
+        vHead: {
             default: 0
         },
         selects: {
@@ -74,12 +98,19 @@ export default {
     justify-content: center;
     align-items: center;
 }
-.result {
-    width: 10rem    ;
-    font-size: 1.45rem;
-    text-align: center;
-    border-bottom: 0.1rem solid var(--results-border-color);
-    /*border-top: 2px solid var(--text-color);*/
-    margin-bottom: 1rem;
+
+.settings_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product {
+    border: 2px solid red;
+    border-radius: .5rem;
+    padding: .35rem;
+    min-width: 15rem;
 }
 </style>
