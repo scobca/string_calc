@@ -86,6 +86,7 @@ import VDataSettings from "@/components/UI/vDataSettings.vue";
 export default {
     name: "HookMethodView",
     components: {VDataSettings, VSelect, VModelList},
+    emits: ('select'),
     props: {
         selects: {
             type: Array,

@@ -13,61 +13,7 @@ export default {
       VHeader
   },
     data () {
-        return {
-            selectedProduct: 0,
-            product: [
-                {
-                    type: 0,
-                    name: 'Выбрать изделие',
-                    active: true
-                },
-                {
-                    type: 1,
-                    name: 'Свитер',
-                    active: false
-                },
-                {
-                    type: 2,
-                    name: 'Жакет',
-                    active: false
-                },
-                {
-                    type: 3,
-                    name: 'Пуловер',
-                    active: false
-                },
-                {
-                    type: 4,
-                    name: 'Жилет',
-                    active: false
-                },
-                {
-                    type: 5,
-                    name: 'Кардиган',
-                    active: false
-                },
-                {
-                    type: 6,
-                    name: 'Шапка',
-                    active: false
-                },
-                {
-                    type: 7,
-                    name: 'Шарф',
-                    active: false
-                },
-                {
-                    type: 8,
-                    name: 'Топ',
-                    active: false
-                },
-                {
-                    type: 9,
-                    name: 'Плед',
-                    active: false
-                }
-            ]
-        }
+        return {}
     }
 }
 </script>

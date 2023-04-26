@@ -7,6 +7,7 @@
             :placeholder="placeholder"
             :value="modelValue"
             :disabled="disabled"
+            min="0"
     >
     <input
             v-else

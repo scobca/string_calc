@@ -1,6 +1,9 @@
 <template>
     <header class="header_container container">
             <div class="logo"> Рассчитай сам! </div>
+            <div class="button">
+                <v-button/>
+            </div>
             <div class="list">
                 <ul class="buttons">
                     <li class="header_button">
@@ -29,9 +32,11 @@
 
 // import VSelect from "@/components/UI/vSelect.vue";
 
+import VButton from "@/components/UI/vButton.vue";
+
 export default {
     name: "vHeader",
-    components: {},
+    components: {VButton},
     data() {
         return {
             categories: [
