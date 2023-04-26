@@ -23,6 +23,35 @@
                                        id="input"
                                        type="number"
                       />
+                      <v-data-settings v-if="this.params_off.cLength.includes(this.selectedProductName)"
+                                       v-model="cLength"
+                                       :placeholder="'Введите длину (см)'"
+                                       v-model.trim="cLength"
+                                       id="input"
+                                       type="number"
+                      />
+                      <v-data-settings v-if="this.params_off.cWidth.includes(this.selectedProductName)"
+                                       v-model="cWidth"
+                                       :placeholder="'Введите ширину (см)'"
+                                       v-model.trim="cWidth"
+                                       id="input"
+                                       type="number"
+                      />
+                      <v-data-settings v-if="this.params_off.collarWidth.includes(this.selectedProductName)"
+                                       v-model="collarWidth"
+                                       :placeholder="'Введите высоту воротника (см)'"
+                                       v-model.trim="collarWidth"
+                                       id="input"
+                                       type="number"
+                      />
+                      <v-data-settings v-if="this.params_off.vHead.includes(this.selectedProductName)"
+                                       v-model="vHead"
+                                       :placeholder="'Введите объем головы (см3)'"
+                                       v-model.trim="vHead"
+                                       id="input"
+                                       type="number"
+                      />
+
                   </div>
               </div>
 
@@ -63,7 +92,13 @@ export default {
         return {
             selectedProductIndex: 0,
             selectedProductName: 'NaN',
+
             length: '',
+            cLength: '',
+            cWidth: '',
+            collarWidth: '',
+            vHead: '',
+
             product: [
                 {
                     type: 0,
@@ -123,6 +158,7 @@ export default {
                 collarWidth: ['Пуловер'],
                 vHead: ['Шапка']
             },
+
             lMeans: false,
             clMeans: false,
             cwMeans: false,
