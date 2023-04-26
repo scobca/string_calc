@@ -114,5 +114,12 @@ export default {
 
 .header_button {
     height: 2rem;
+    border-bottom: 0.15rem solid transparent;
+    box-sizing: border-box;
+    transition-duration: .5s;
+}
+
+.header_button:hover {
+    border-bottom: .15rem solid #B275FF;
 }
 </style>
