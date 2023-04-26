@@ -1,11 +1,15 @@
 <template>
     <div class="button">
-        <button :class="hookClass" @click="updateActive" @select="$emit('select', this.activeHook)">
-            Вязание крючком
-        </button>
-        <button :class="needleClass" @click="updateActive">
-            Вязание спицами
-        </button>
+        <router-link to="/">
+            <button :class="hookClass" @click="updateActiveHook">
+                Вязание крючком
+            </button>
+        </router-link>
+        <router-link to="/needles">
+            <button :class="needleClass" @click="updateActiveNeedle">
+                Вязание спицами
+            </button>
+        </router-link>
     </div>
 </template>
 
@@ -27,11 +31,20 @@ export default {
         }
     },
     methods: {
-        updateActive() {
-            this.activeHook = !this.activeHook;
-            this.activeNeedle = !this.activeNeedle;
-
-            if (this.activeHook === true) {
+        updateActiveHook() {
+            if (this.activeHook === false) {
+                this.activeHook = true
+                this.hookClass = 'hook';
+                this.needleClass = 'needle_active'
+            }
+            else {
+                this.hookClass = 'hook_active';
+                this.needleClass = 'needle'
+            }
+        },
+        updateActiveNeedle() {
+            if (this.activeNeedle === false) {
+                this.activeNeedle = true
                 this.hookClass = 'hook_active';
                 this.needleClass = 'needle'
             }
@@ -64,7 +77,7 @@ export default {
 
 .hook, .needle, .hook_active, .needle_active {
     padding: 0 .5rem 0 .5rem;
-    min-height: 3rem;
+    min-height: 2.3rem;
     min-width: 10rem;
     border: none;
     font-size: 1.1rem;

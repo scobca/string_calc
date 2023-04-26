@@ -92,7 +92,7 @@ export default {
 
 <style scoped>
 .container {
-    min-width: 25rem;
+    min-width: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,7 +108,7 @@ export default {
 }
 
 .product {
-    border: 2px solid white;
+    border: .15rem solid white;
     border-radius: .5rem;
     /*padding: .35rem;*/
     padding: 0;

@@ -1,5 +1,5 @@
 <template>
-    <v-header/>
+    <v-header @click.prevent="select"/>
     <router-view/>
 </template>
 
@@ -14,6 +14,12 @@ export default {
   },
     data () {
         return {}
+    },
+    methods: {
+      select(activeHook, activeNeedle) {
+          console.log(activeHook);
+          console.log(activeNeedle);
+      }
     }
 }
 </script>

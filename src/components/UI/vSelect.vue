@@ -112,10 +112,10 @@ export default {
     border-radius: .85rem;
     list-style: none;
     overflow: hidden;
-    min-width: 10rem;
     margin-top: 2.3rem;
     z-index: 101;
     scale: 90%;
+    min-width: 15rem;
 }
 
 .list__item {
@@ -123,7 +123,7 @@ export default {
     padding: 1rem;
     color: var(--text-color);
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .list__item:hover {

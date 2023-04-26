@@ -2,7 +2,7 @@
     <header class="header_container container">
             <div class="logo"> Рассчитай сам! </div>
             <div class="button">
-                <v-button/>
+                <v-button @select="$emit('select')"/>
             </div>
             <div class="list">
                 <ul class="buttons">
@@ -56,7 +56,7 @@ export default {
                     active: false
                 }
             ],
-            vRoute: ''
+            vRoute: '',
         }
     },
     methods: {

@@ -1,8 +1,12 @@
 <template>
    <section class="section">
        <div class="container">
-           <h2 class="header">
+           <h2 class="header" v-if="$route.name === 'home'">
                Калькулятор материала для вязания крючком
+           </h2>
+
+           <h2 class="header" v-if="$route.name === 'needles'">
+               Калькулятор материала для вязания спицами
            </h2>
 
            <div class="common_model">
@@ -197,7 +201,7 @@ export default {
     },
     created() {
         this.selectedProductName = 'Выбрать изделие'
-    }
+    },
 }
 </script>
 

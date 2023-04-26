@@ -10,6 +10,12 @@ const routes = [
         component: VModel
     },
     {
+        path: '/needles',
+        alias: '/needles',
+        name: 'needles',
+        component: VModel
+    },
+    {
         path: '/about',
         alias: '/about',
         name: 'about',
