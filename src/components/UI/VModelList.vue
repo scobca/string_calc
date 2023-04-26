@@ -2,10 +2,10 @@
     <section class="container">
         <div class="container">
             <div class="settings_container">
-                <div class="product" v-if="this.typeIndex === 0">
+                <div class="product" v-if="this.typeIndex === 0" id="product">
                     Не выбран тип изделия
                 </div>
-                <div class="product" v-else>
+                <div class="product" v-else id="product">
                     Тип изделия: {{nameType}}
                 </div>
 
@@ -110,7 +110,16 @@ export default {
 .product {
     border: 2px solid red;
     border-radius: .5rem;
-    padding: .35rem;
+    /*padding: .35rem;*/
+    padding: 0;
     min-width: 15rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#product {
+    padding: 0;
 }
 </style>

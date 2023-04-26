@@ -8,7 +8,7 @@
            <div class="common_model">
 
               <div class="settings">
-                  <div class="type">
+                  <div class="type" id="type_selector">
                       <v-select class="selector length"
                                 :selects="product"
                                 @select="update"
@@ -211,7 +211,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 0;
 }
 
 .common_model {
@@ -221,7 +222,8 @@ export default {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     min-width: 80vw;
@@ -233,48 +235,59 @@ export default {
 }
 
 .selector {
-    padding: .3rem;
+    /*padding: .3rem;*/
+    padding: 0;
 }
 
+
 .type {
-    border: .15rem solid var(--border-color);
-    border-radius: .5rem;
     min-width: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+#type_selector {
+    border: .15rem solid white;
+    border-radius: .5rem;
+    min-height: 3rem;
 }
 
 .settings {
-    padding: .3rem;
+    /*padding: .3rem;*/
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 20rem;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .result {
-    padding: .3rem;
+    /*padding: .3rem;*/
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 20rem;
 
-    border: 3px solid var(--results-border-color);
+    /*border: 3px solid var(--results-border-color);*/
     border-radius: .5rem;
 }
 
 #input {
     background-color: transparent;
-    border: none;
+    border: .15rem solid white;
+    border-radius: .5rem;
     text-align: center;
     height: 2.3rem;
     font-size: 1rem;
-    min-width: 19rem;
+    min-width: 20rem;
+    min-height: 3rem;
 }
 
 #input:focus {

@@ -1,8 +1,6 @@
 <template>
     <input
             v-if="type === 'number'"
-            :max="max"
-            :min="min"
             @input="$emit('update:modelValue', $event.target.value)"
             class="input"
             :type="type"
@@ -51,7 +49,7 @@ export default {
 .input {
     background: transparent;
     border: none;
-    height: 2rem;
+    /*height: 2rem;*/
     text-align: center;
     transition: all .3s ease-in-out;
 }
@@ -67,5 +65,6 @@ export default {
 
 ::placeholder {
     font-style: italic;
+    color: #bdbdbd;
 }
 </style>
