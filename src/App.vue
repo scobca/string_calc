@@ -1,19 +1,15 @@
 <template>
     <v-header/>
-<!--    <router-view/>-->
-    <v-model :selects="product" v-if="this"/>
+    <router-view/>
 </template>
 
 <script>
 
 import VHeader from "@/components/UI/vHeader.vue";
-import VModel from "@/components/UI/VModel.vue";
-// import VModelList from "@/components/UI/VModelList.vue";
 
 export default {
   name: 'App',
   components: {
-      VModel,
       VHeader
   },
     data () {

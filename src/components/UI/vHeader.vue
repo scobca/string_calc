@@ -8,17 +8,18 @@
                     </li>
                     <li class="header_button">
                         <router-link to="/about"> О проекте </router-link>
-                    </li><li class="header_button">
-                        <router-link to='/'> Назад </router-link>
                     </li>
-                    <li class="header_button">
-                        <v-select
-                            class="header_button"
-                            v-if="$route.name === 'home'"
-                            :selects="categories"
-                            @select="updateTestsList"
-                        />
-                    </li>
+<!--                    <li class="header_button">-->
+<!--                        <router-link to='/'> Назад </router-link>-->
+<!--                    </li>-->
+<!--                    <li class="header_button">-->
+<!--                        <v-select-->
+<!--                            class="header_button"-->
+<!--                            v-if="$route.name === 'home'"-->
+<!--                            :selects="categories"-->
+<!--                            @select="updateTestsList"-->
+<!--                        />-->
+<!--                    </li>-->
                 </ul>
             </div>
     </header>
@@ -26,11 +27,11 @@
 
 <script>
 
-import VSelect from "@/components/UI/vSelect.vue";
+// import VSelect from "@/components/UI/vSelect.vue";
 
 export default {
     name: "vHeader",
-    components: {VSelect},
+    components: {},
     data() {
         return {
             categories: [

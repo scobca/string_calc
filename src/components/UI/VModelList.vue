@@ -108,7 +108,7 @@ export default {
 }
 
 .product {
-    border: 2px solid red;
+    border: 2px solid white;
     border-radius: .5rem;
     /*padding: .35rem;*/
     padding: 0;

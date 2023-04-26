@@ -203,7 +203,7 @@ export default {
 <style scoped>
 .section {
     margin: .5rem 2rem 2rem 2rem;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .container {
@@ -216,7 +216,7 @@ export default {
 }
 
 .common_model {
-    border: 3px solid white;
+    /*border: 3px solid white;*/
     border-radius: 1rem;
     padding: 1rem;
 
