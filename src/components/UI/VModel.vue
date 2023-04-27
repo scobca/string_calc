@@ -1,12 +1,12 @@
 <template>
    <section class="section">
        <div class="container">
-           <h2 class="header" v-if="$route.name === 'home'">
-               Калькулятор материала для вязания крючком
+           <h2 class="header" id='mHeader' v-if="$route.name === 'home'">
+               Калькулятор материала для вязания <span class="header" id="header"> крючком </span>
            </h2>
 
-           <h2 class="header" v-if="$route.name === 'needles'">
-               Калькулятор материала для вязания спицами
+           <h2 class="header" id="mHeader" v-if="$route.name === 'needles'">
+               Калькулятор материала для вязания <span class="header" id="header"> спицами </span>
            </h2>
 
            <div class="common_model">
@@ -301,6 +301,15 @@ export default {
 
 #input:focus {
     outline: none;
+}
+
+#header {
+    border-bottom: .15rem solid transparent;
+    transition-duration: .5s;
+}
+
+#mHeader:hover #header {
+    border-bottom: .15rem solid #B275FF;
 }
 
 </style>
