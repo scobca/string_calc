@@ -112,7 +112,7 @@ export default {
     border-radius: .5rem;
     /*padding: .35rem;*/
     padding: 0;
-    min-width: 15rem;
+    min-width: 20rem;
     min-height: 3rem;
     display: flex;
     align-items: center;

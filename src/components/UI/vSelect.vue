@@ -130,7 +130,7 @@ export default {
     background: linear-gradient(130.42deg, #B27511 13.57%, #DD7E11 98.35%);
 }
 
-select {
+.select {
     color: var(--text-color);
 }
 

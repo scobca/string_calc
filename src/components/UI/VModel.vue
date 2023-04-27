@@ -78,7 +78,9 @@
                </div>
            </div>
        </div>
-   </section>
+       <div class="button">
+           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'"/>
+       </div>   </section>
 </template>
 
 <script>
@@ -86,10 +88,11 @@
 import VModelList from "@/components/UI/VModelList.vue";
 import VSelect from "@/components/UI/vSelect.vue";
 import VDataSettings from "@/components/UI/vDataSettings.vue";
+import VButtonCalculate from "@/components/UI/vButtonCalculate.vue";
 
 export default {
     name: "HookMethodView",
-    components: {VDataSettings, VSelect, VModelList},
+    components: {VButtonCalculate, VDataSettings, VSelect, VModelList},
     emits: ('select'),
     props: {
         selects: {
@@ -232,6 +235,7 @@ export default {
     align-items: center;
     margin-bottom: 1rem;
     min-width: 80vw;
+    gap: 6rem;
 }
 
 .header {
