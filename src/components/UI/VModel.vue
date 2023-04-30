@@ -26,6 +26,7 @@
                                        v-model.trim="cLength"
                                        id="input"
                                        type="number"
+                                       @input="checkValid"
                       />
                       <v-data-settings v-if="this.params_off.cWidth.includes(this.selectedProductName)"
                                        v-model="cWidth"
@@ -33,6 +34,7 @@
                                        v-model.trim="cWidth"
                                        id="input"
                                        type="number"
+                                       @input="checkValid"
                       />
                       <v-data-settings v-if="this.params_off.length.includes(this.selectedProductName)"
                                        v-model="length"
@@ -40,6 +42,7 @@
                                        v-model.trim="length"
                                        id="input"
                                        type="number"
+                                       @input="checkValid"
                       />
                       <v-data-settings v-if="this.params_off.collarWidth.includes(this.selectedProductName)"
                                        v-model="collarWidth"
@@ -47,6 +50,7 @@
                                        v-model.trim="collarWidth"
                                        id="input"
                                        type="number"
+                                       @input="checkValid"
                       />
                       <v-data-settings v-if="this.params_off.vHead.includes(this.selectedProductName)"
                                        v-model="vHead"
@@ -54,6 +58,7 @@
                                        v-model.trim="vHead"
                                        id="input"
                                        type="number"
+                                       @input="checkValid"
                       />
 
                   </div>
@@ -200,6 +205,47 @@ export default {
             })
             console.log(this.selectedProductIndex);
             console.log(this.selectedProductName);
+        },
+        checkValid() {
+            if (this.cLength < 0 ) {
+                let error = confirm('Длина не может быть меньше 0')
+                if (error === true)
+                    this.cLength = 0;
+                else
+                    this.cLength = 0;
+            }
+
+            if (this.cWidth < 0 ) {
+                let error = confirm('Ширина не может быть меньше 0')
+                if (error === true)
+                    this.cWidth = 0;
+                else
+                    this.cWidth = 0;
+            }
+
+            if (this.length < 0 ) {
+                let error = confirm('Длина рукава не может быть меньше 0')
+                if (error === true)
+                    this.length = 0;
+                else
+                    this.length = 0;
+            }
+
+            if (this.collarWidth < 0 ) {
+                let error = confirm('Высота воротника не может быть меньше 0')
+                if (error === true)
+                    this.collarWidth = 0;
+                else
+                    this.collarWidth = 0;
+            }
+
+            if (this.vHead < 0 ) {
+                let error = confirm('Объём головы не может быть меньше 0')
+                if (error === true)
+                    this.vHead = 0;
+                else
+                    this.vHead = 0;
+            }
         }
     },
     created() {
