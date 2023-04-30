@@ -127,7 +127,7 @@ export default {
 }
 
 .list__item:hover {
-    background: linear-gradient(130.42deg, #B27511 13.57%, #DD7E11 98.35%);
+    background: linear-gradient(200.42deg, #B275FF 13.57%, #DD7EFF 98.35%);
 }
 
 .select {
