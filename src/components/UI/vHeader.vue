@@ -1,7 +1,7 @@
 <template>
     <header class="header_container container">
             <div class="logo"> Рассчитай сам! </div>
-            <div class="button">
+            <div class="button" v-if="$route.name !== 'about'">
                 <v-button @select="$emit('select')"/>
             </div>
             <div class="list">
@@ -12,17 +12,6 @@
                     <li class="header_button">
                         <router-link to="/about"> О проекте </router-link>
                     </li>
-<!--                    <li class="header_button">-->
-<!--                        <router-link to='/'> Назад </router-link>-->
-<!--                    </li>-->
-<!--                    <li class="header_button">-->
-<!--                        <v-select-->
-<!--                            class="header_button"-->
-<!--                            v-if="$route.name === 'home'"-->
-<!--                            :selects="categories"-->
-<!--                            @select="updateTestsList"-->
-<!--                        />-->
-<!--                    </li>-->
                 </ul>
             </div>
     </header>
