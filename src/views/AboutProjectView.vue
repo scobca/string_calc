@@ -74,11 +74,12 @@ export default {
 .header_body {
     margin-bottom: 1rem;
     color: #B275FF;
+    text-align: center;
 }
 
 .aboutPrg, .research {
     max-width: 23rem;
-    text-align: center;
+    text-align: justify;
     border: 3px solid #B275FF;
     border-radius: .5rem;
     padding: 1rem;
