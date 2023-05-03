@@ -1,9 +1,6 @@
 <template>
     <header class="header_container container">
             <div class="logo"> Рассчитай сам! </div>
-            <div class="button" v-if="$route.name !== 'about'">
-                <v-button @select="$emit('select')"/>
-            </div>
             <div class="list">
                 <ul class="buttons">
                     <li class="header_button">
@@ -11,6 +8,11 @@
                     </li>
                     <li class="header_button">
                         <router-link to="/about"> О проекте </router-link>
+                    </li>
+                    <li class="header_button_select">
+                        <div class="button" v-if="$route.name !== 'about'">
+                            <v-button @select="$emit('select')"/>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -89,7 +91,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    max-width: 30rem;
+    max-width: 40rem;
 }
 
 .buttons {
@@ -101,7 +103,7 @@ export default {
     font-size: 1.1rem;
 }
 
-.header_button {
+.header_button, .header_button_select {
     height: 2rem;
     border-bottom: 0.15rem solid transparent;
     box-sizing: border-box;
