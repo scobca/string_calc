@@ -84,8 +84,12 @@
            </div>
        </div>
        <div class="button">
-           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'"/>
-       </div>   </section>
+           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'" @click="calculateData"/>
+       </div>
+       <div class="result_data_container" v-if="this.resultData > 0">
+           <p class="result_data">Необходимо ниток: {{ resultData }} см</p>
+       </div>
+   </section>
 </template>
 
 <script>
@@ -180,7 +184,8 @@ export default {
             clMeans: false,
             cwMeans: false,
             collarMeans: false,
-            vHeadMeans: false
+            vHeadMeans: false,
+            resultData: 0
         }
     },
     methods: {
@@ -246,6 +251,10 @@ export default {
                 else
                     this.vHead = 0;
             }
+        },
+        calculateData() {
+           if (this.selectedProductName === 'Жилет')
+               this.resultData = this.cLength * this.cWidth + 100
         }
     },
     created() {
@@ -356,6 +365,19 @@ export default {
 
 #mHeader:hover #header {
     border-bottom: .15rem solid #B275FF;
+}
+
+.result_data_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.result_data {
+    border: .15rem solid #B275FF;
+    min-width: 20rem;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 </style>

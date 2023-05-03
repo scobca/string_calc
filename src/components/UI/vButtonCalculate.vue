@@ -61,7 +61,7 @@ export default {
 
 
 .calculate {
-    background: linear-gradient(200.42deg, #B275FF 13.57%, #DD7EFF 98.35%);
+    background: linear-gradient(200.42deg, #B275FF 13.57%, #DD7EFF 50.35%);
     min-width: 20rem;
     min-height: 3rem;
     border: .15rem solid white;
