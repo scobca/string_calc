@@ -1,14 +1,25 @@
 <template>
     <section class="introducing">
-        <div class="header">
+        <div class="header"
+             data-aos="fade-up"
+             data-aos-duration="1300"
+        >
             <h2> Добро пожаловать на страницу проекта "Рассчитай сам"</h2>
         </div>
-        <div class="post-header">
+        <div class="post-header"
+             data-aos="fade-up"
+             data-aos-duration="1300"
+             data-aos-delay="500"
+        >
             <h3> Наша цель - уменьшить количество ошибок при подсчете и облегчить процесс вязания! </h3>
         </div>
     </section>
     <section class="body">
-        <div class="aboutPrg">
+        <div class="aboutPrg"
+             data-aos="fade-up"
+             data-aos-duration="1300"
+             data-aos-delay="750"
+        >
             <h2 class="header_body">О проекте</h2>
             Для людей, увлекающихся вязанием, не секрет, что для полноценного изделия требуется немало материала,
             который часто бывает дорогим. Поэтому, чтобы сэкономить время и деньги существуют онлайн-калькуляторы,
@@ -17,7 +28,11 @@
             этого, мой проект решает проблему отсутствия современных инструментов расчёта для вязания не в промышленном
             масштабе.
         </div>
-        <div class="research">
+        <div class="research"
+             data-aos="fade-up"
+             data-aos-duration="1300"
+             data-aos-delay="1250"
+        >
             <h2 class="header_body">О проекте</h2>
             Для людей, увлекающихся вязанием, не секрет, что для полноценного изделия требуется немало материала,
             который часто бывает дорогим. Поэтому, чтобы сэкономить время и деньги существуют онлайн-калькуляторы,
@@ -26,7 +41,11 @@
             этого, мой проект решает проблему отсутствия современных инструментов расчёта для вязания не в промышленном
             масштабе.
         </div>
-        <div class="research">
+        <div class="research"
+             data-aos="fade-up"
+             data-aos-duration="1300"
+             data-aos-delay="1750"
+        >
             <h2 class="header_body">О проекте</h2>
             Для людей, увлекающихся вязанием, не секрет, что для полноценного изделия требуется немало материала,
             который часто бывает дорогим. Поэтому, чтобы сэкономить время и деньги существуют онлайн-калькуляторы,
@@ -39,6 +58,10 @@
 </template>
 
 <script>
+
+import AOS from 'aos'
+AOS.init();
+
 export default {
     name: "AboutProjectView"
 }

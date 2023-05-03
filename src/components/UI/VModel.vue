@@ -1,19 +1,27 @@
 <template>
    <section class="section">
-       <div class="container">
-           <h2 class="header" id='mHeader' v-if="$route.name === 'home'">
+       <div class="container"
+            data-aos="fade-up"
+            data-aos-duration="1300"
+       >
+           <h2 class="header"
+               id='mHeader'
+               v-if="$route.name === 'home'"
+           >
                Калькулятор материала для вязания <span class="header" id="header"> крючком </span>
            </h2>
 
-           <h2 class="header" id="mHeader" v-if="$route.name === 'needles'">
+           <h2 class="header"
+               id="mHeader"
+               v-if="$route.name === 'needles'"
+           >
                Калькулятор материала для вязания <span class="header" id="header"> спицами </span>
            </h2>
 
            <div class="common_model">
-
               <div class="settings">
                   <div class="type" id="type_selector">
-                      <v-select class="selector length"
+                      <v-select class="selector"
                                 :selects="product"
                                 @select="update"
                       />
@@ -98,6 +106,9 @@ import VModelList from "@/components/UI/VModelList.vue";
 import VSelect from "@/components/UI/vSelect.vue";
 import VDataSettings from "@/components/UI/vDataSettings.vue";
 import VButtonCalculate from "@/components/UI/vButtonCalculate.vue";
+import AOS from 'aos'
+
+AOS.init();
 
 export default {
     name: "HookMethodView",
