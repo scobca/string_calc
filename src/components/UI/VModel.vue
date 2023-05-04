@@ -18,6 +18,12 @@
                Калькулятор материала для вязания <span class="header" id="header"> спицами </span>
            </h2>
 
+           <div class="button">
+               <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'"
+                                   @click="calculateData"
+                                   class="button_calc"/>
+           </div>
+
            <div class="common_model">
               <div class="settings">
                   <div class="type" id="type_selector">
@@ -110,11 +116,6 @@
                </div>
            </div>
        </div>
-       <div class="button">
-           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'"
-                               @click="calculateData"
-                               class="button_calc"/>
-       </div>
        <div class="result_data_container" v-if="this.resultData > 0">
            <p class="result_data">Необходимо ниток: {{ resultData }} см</p>
        </div>
@@ -206,7 +207,7 @@ export default {
                 }
             ],
             params_off: {
-                length: ['Свитер', 'Жакет', 'Кардиган'],
+                length: ['Свитер', 'Жакет', 'Кардиган', 'Пуловер'],
                 cLength: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Шарф', 'Топ', 'Плед', 'Пуловер', 'Шапка'],
                 cWidth: ['Шарф'],
                 collarWidth: ['Пуловер'],
@@ -288,8 +289,10 @@ export default {
             }
         },
         calculateData() {
-           if (this.selectedProductName === 'Жилет')
+           if (this.selectedProductName === 'Жилет') {
                this.resultData = this.cLength * this.cWidth + 100
+               console.log(this.thread);
+           }
         }
     },
     created() {
@@ -340,6 +343,7 @@ export default {
 .selector {
     /*padding: .3rem;*/
     padding: 0;
+    z-index: 10;
 }
 
 
@@ -420,7 +424,7 @@ export default {
 }
 
 .button_calc {
-    z-index: -1;
+    z-index: 1;
 }
 
 .button {
