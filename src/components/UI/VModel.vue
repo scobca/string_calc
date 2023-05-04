@@ -78,6 +78,14 @@
                                        type="number"
                                        @input="checkValid"
                       />
+                      <v-data-settings v-model="thread"
+                                       :placeholder="'Введите вес ниток (гр)'"
+                                       v-model.trim="thread"
+                                       id="input"
+                                       type="number"
+                                       @input="checkValid"
+                      />
+
 
                   </div>
               </div>
@@ -103,7 +111,9 @@
            </div>
        </div>
        <div class="button">
-           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'" @click="calculateData"/>
+           <v-button-calculate v-if="this.selectedProductName !== 'Выбрать изделие'"
+                               @click="calculateData"
+                               class="button_calc"/>
        </div>
        <div class="result_data_container" v-if="this.resultData > 0">
            <p class="result_data">Необходимо ниток: {{ resultData }} см</p>
@@ -141,6 +151,7 @@ export default {
             cWidth: '',
             collarWidth: '',
             vHead: '',
+            thread: '',
 
             product: [
                 {
@@ -289,6 +300,10 @@ export default {
 
 <style scoped>
 .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: .5rem 2rem 2rem 2rem;
     /*border: 1px solid red;*/
 }
@@ -311,7 +326,7 @@ export default {
     flex-direction: row;
     /*justify-content: space-between;*/
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 1rem;
     min-width: 80vw;
     gap: 6rem;
@@ -402,6 +417,14 @@ export default {
     min-width: 20rem;
     padding: .5rem;
     border-radius: .5rem;
+}
+
+.button_calc {
+    z-index: -1;
+}
+
+.button {
+    width: 20rem;
 }
 
 </style>

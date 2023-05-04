@@ -1,4 +1,4 @@
-<template>
+<template class="template">
     <div class="button">
         <button class="calculate">
             Посчитать!
@@ -51,6 +51,14 @@ export default {
 </script>
 
 <style scoped>
+.template {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+}
+
 .button {
     display: flex;
     flex-direction: row;
@@ -67,5 +75,5 @@ export default {
     border: .15rem solid white;
     border-radius: .5rem;
     font-size: 1rem;
-}
+    max-width: 20rem;}
 </style>
