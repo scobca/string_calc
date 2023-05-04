@@ -36,6 +36,15 @@
                                        type="number"
                                        @input="checkValid"
                       />
+                      <v-data-settings v-if="this.params_off.cWidthBreast.includes(this.selectedProductName)"
+                                       v-model="cWidth"
+                                       :placeholder="'Введите объём груди (см)'"
+                                       v-model.trim="cWidth"
+                                       id="input"
+                                       type="number"
+                                       @input="checkValid"
+                      />
+
                       <v-data-settings v-if="this.params_off.cWidth.includes(this.selectedProductName)"
                                        v-model="cWidth"
                                        :placeholder="'Введите ширину (см)'"
@@ -44,6 +53,7 @@
                                        type="number"
                                        @input="checkValid"
                       />
+
                       <v-data-settings v-if="this.params_off.length.includes(this.selectedProductName)"
                                        v-model="length"
                                        :placeholder="'Введите длину рукава (см)'"
@@ -62,7 +72,7 @@
                       />
                       <v-data-settings v-if="this.params_off.vHead.includes(this.selectedProductName)"
                                        v-model="vHead"
-                                       :placeholder="'Введите объем головы (см3)'"
+                                       :placeholder="'Введите объем головы (см)'"
                                        v-model.trim="vHead"
                                        id="input"
                                        type="number"
@@ -87,6 +97,7 @@
                                  :c-width="cWidth"
                                  :collar-width="collarWidth"
                                  :v-head="vHead"
+                                 :item="this.selectedProductName"
                    />
                </div>
            </div>
@@ -186,9 +197,10 @@ export default {
             params_off: {
                 length: ['Свитер', 'Жакет', 'Кардиган'],
                 cLength: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Шарф', 'Топ', 'Плед', 'Пуловер', 'Шапка'],
-                cWidth: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Шарф', 'Топ', 'Плед', 'Пуловер'],
+                cWidth: ['Шарф'],
                 collarWidth: ['Пуловер'],
-                vHead: ['Шапка']
+                vHead: ['Шапка'],
+                cWidthBreast: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Топ', 'Плед', 'Пуловер']
             },
 
             lMeans: false,
@@ -210,7 +222,8 @@ export default {
 
                 this.lMeans = this.params_off.length.includes(this.selectedProductName);
                 this.clMeans = this.params_off.cLength.includes(this.selectedProductName);
-                this.cwMeans = this.params_off.cWidth.includes(this.selectedProductName);
+                this.cwMeans = this.params_off.cWidth.includes(this.selectedProductName) ||
+                    this.params_off.cWidthBreast.includes(this.selectedProductName);
                 this.collarMeans = this.params_off.collarWidth.includes(this.selectedProductName);
                 this.vHeadMeans = this.params_off.vHead.includes(this.selectedProductName);
 

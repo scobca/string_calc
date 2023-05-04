@@ -14,7 +14,8 @@
                 </div>
 
                 <div class="product" v-if="cwMeans">
-                    Ширина: {{cWidth}}
+                    <p v-if="this.items_width.width.includes(this.item)"> Ширина: {{cWidth}} </p>
+                    <p v-if="this.items_width.breastWidth.includes(this.item)"> Объем груди: {{cWidth}} </p>
                 </div>
 
                 <div class="product" v-if="lMeans">
@@ -84,6 +85,18 @@ export default {
         vHeadMeans: {
             type: Boolean,
             default: false
+        },
+        item: {
+            type: String,
+            default: ''
+        }
+    },
+    data() {
+        return {
+            items_width: {
+                width: ['Шарф'],
+                breastWidth: ['Свитер', 'Жакет', 'Жилет', 'Кардиган', 'Топ', 'Плед', 'Пуловер']
+            }
         }
     },
     methods: {}
