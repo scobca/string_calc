@@ -289,10 +289,46 @@ export default {
             }
         },
         calculateData() {
-           if (this.selectedProductName === 'Жилет') {
-               this.resultData = this.cLength * this.cWidth + 100
-               console.log(this.thread);
+           if (this.$route.name === 'needles') {
+               if (this.selectedProductName === 'Свитер')
+                   this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 0.9
+               if (this.selectedProductName === 'Жакет')
+                   this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 1.1
+               if (this.selectedProductName === 'Пуловер')
+                   this.resultData = (this.cWidth * 11.5 * this.thread) / 100
+               if (this.selectedProductName === 'Кардиган')
+                   this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 1.2
+               if (this.selectedProductName === 'Топ')
+                   this.resultData = (this.cWidth * this.cLength * this.thread) / 100
+               if (this.selectedProductName === 'Жилет')
+                   this.resultData = (this.cWidth * this.cLength * this.thread) / 100
+               if (this.selectedProductName === 'Шапка')
+                   this.resultData = (this.cWidth * this.thread * 2.7) / 100
+               if (this.selectedProductName === 'Шарф')
+                   this.resultData = (this.cWidth * this.thread * this.cLength) / 100
+               if (this.selectedProductName === 'Плед')
+                   this.resultData = (this.cWidth * this.thread * this.cLength) / 100
            }
+            else {
+                if (this.selectedProductName === 'Свитер')
+                    this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 0.95
+                if (this.selectedProductName === 'Жакет')
+                    this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 1.15
+                if (this.selectedProductName === 'Пуловер')
+                    this.resultData = (this.cWidth * 11.5 * this.thread) / 100
+                if (this.selectedProductName === 'Кардиган')
+                    this.resultData = ((this.cWidth * 11.5 * this.thread) / 100) * 1.25
+                if (this.selectedProductName === 'Топ')
+                    this.resultData = (this.cWidth * this.cLength * this.thread) / 100
+                if (this.selectedProductName === 'Жилет')
+                    this.resultData = (this.cWidth * this.cLength * this.thread) / 100
+                if (this.selectedProductName === 'Шапка')
+                    this.resultData = (this.cWidth * this.thread * 2.7) / 100
+                if (this.selectedProductName === 'Шарф')
+                    this.resultData = (this.cWidth * this.thread * this.cLength) / 100
+                if (this.selectedProductName === 'Плед')
+                    this.resultData = (this.cWidth * this.thread * this.cLength) / 100
+            }
         }
     },
     created() {
@@ -414,6 +450,7 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    z-index: -1;
 }
 
 .result_data {
